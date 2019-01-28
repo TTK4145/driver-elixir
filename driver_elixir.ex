@@ -1,7 +1,6 @@
 defmodule Driver do
   use GenServer
   @call_timeout 1000
-  @server_name :ElevatorInterface
   @button_map %{:hall_up => 0, :hall_down => 1, :cab => 2}
   @state_map  %{:on => 1, :off => 0}
   @direction_map %{:up => 1, :down => 255, :stop => 0}
@@ -11,7 +10,7 @@ defmodule Driver do
   end
 
   def start address, port do
-    GenServer.start_link(__MODULE__, [address, port], [{:name, @server_name}])
+    GenServer.start_link(__MODULE__, [address, port], [])
   end
 
   def stop pid do
