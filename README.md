@@ -3,13 +3,13 @@ If you are using Mix as you Elixir build tool (which you really should), add the
 
 ## Usage Examples
 ### Starting up the driver from iex
-`iex(1)> {:ok, driver_pid} = Driver.start()`  
+`iex(1)> {:ok, driver_pid} = Driver.start_link([])`  
 `{:ok, #PID<x.xxx.x>}`  
 ### Setting the motor direction
-`iex(1)> {:ok, driver_pid} = Driver.start()`  
-`{:ok, #PID<x.xxx.x>}`  
-`iex(2)> Driver.set_motor_direction(driver_pid, :down)`
+`iex(1)> {:ok, driver_pid} = Driver.start_link([])`  
+`{:ok, #PID<x.xxx.x>}`
+`iex(2)> Driver.set_motor_direction(:down)`
 ### Setting the floor indicator
-`iex(1)> {:ok, driver_pid} = Driver.start()`  
+`iex(1)> {:ok, driver_pid} = Driver.start_link([])`  
 `{:ok, #PID<x.xxx.x>}`  
-`iex(2)> Driver.set_floor_indicator(driver_pid, 2)`
+`iex(2)> Driver.set_floor_indicator(2)`
